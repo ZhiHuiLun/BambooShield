@@ -1,10 +1,10 @@
-# 🛡️ 玄武(XuanWu) - LLM Prompt Injection Defense Model
+# 🛡️ 竹盾(BambooShield)-LLM Prompt Injection Defense Model
 
 [Badges: License Apache 2.0 | Python 3.8+ | PyTorch]
 
 ## 📖 简介 (Introduction)
 
-**玄武(XuanWu)** 是一个基于 **Chinese-RoBERTa-wwm-ext** 微调的中文提示词注入（Prompt Injection）防御模型。
+**竹盾(BambooShield)** 是一个基于 **Chinese-RoBERTa-wwm-ext** 微调的中文提示词注入（Prompt Injection）专用防御模型。
 针对大语言模型（LLM）面临的恶意攻击，本模型采用了 **PGD 对抗训练 (Projected Gradient Descent)** 与 **主动学习 (Active Learning)** 策略，有效防御显式注入、逻辑嵌套、角色扮演（DAN模式）及伪造系统指令等攻击手段。（**注意**：本模型专注于防御 Prompt Injection，如角色扮演、系统指令覆盖，不包含 Content Moderation，如涉黄涉暴内容过滤。建议配合内容风控模型一起使用。）
 
 ## 🚀 核心特性 (Key Features)
@@ -52,7 +52,7 @@ pip install transformers torch
 import torch
 from transformers import BertTokenizer, BertForSequenceClassification
 
-model_name = "[你的HuggingFace用户名]/[模型名称]"
+model_name = "ZhiHuiLun/BambooShield"
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 tokenizer = BertTokenizer.from_pretrained(model_name)
